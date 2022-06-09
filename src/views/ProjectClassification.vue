@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <div class="header">益友客项目列表</div>
+    <div class="header">XXX项目列表</div>
     <div class="search">
       <el-input v-model="projectTitle" placeholder="请输入项目名称"></el-input>
       <el-button type="primary" @click="search">搜索</el-button>
