@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <div class="header">XXX项目列表</div>
+    <div class="header">xxx项目列表</div>
     <div class="search">
       <el-input v-model="projectTitle" placeholder="请输入项目名称"></el-input>
       <el-button type="primary" @click="search">搜索</el-button>
@@ -116,9 +116,9 @@
           </el-card>
         </el-carousel-item>
       </el-carousel>
-    </div>
-    <div class="add">
-      <el-button type="primary" @click="addProject">添加项目</el-button>
+      <div class="add">
+        <el-button type="primary" @click="addProject">添加项目</el-button>
+      </div>
     </div>
   </div>
 </template>
@@ -353,6 +353,8 @@
     .cardBox {
       width: 1600px;
       margin: auto;
+      position: relative;
+
       .card {
         width: 100%;
         margin: 10px;
@@ -404,18 +406,17 @@
           }
         }
       }
-    }
-
-    .add {
-      position: absolute;
-      transform: translateX(-50%);
-      left: 50%;
-      bottom: 100px;
-      .el-button {
-        width: 200px;
-        height: 50px;
-        font-size: 18px;
-        font-weight: 600;
+      .add {
+        position: absolute;
+        transform: translateX(-50%);
+        left: 50%;
+        bottom: -100px;
+        .el-button {
+          width: 200px;
+          height: 50px;
+          font-size: 18px;
+          font-weight: 600;
+        }
       }
     }
   }
