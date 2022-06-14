@@ -20,8 +20,6 @@
           style="display: flex"
           v-for="(item, index) in list"
           :key="index"
-          @mouseenter="deleteShow = true"
-          @mouseleave="deleteShow = false"
         >
           <el-card :body-style="{ padding: '0px' }" class="card">
             <img
@@ -34,7 +32,6 @@
                 class="delete"
                 circle
                 @click="deleteProject(index)"
-                v-if="deleteShow"
               >
                 <el-icon>
                   <CloseBold />
@@ -268,9 +265,6 @@
       //监听数据变化后存入本地
       watch(() => project.list, saveProjectList, { deep: true });
 
-      /**是否显示删除按钮 */
-      let deleteShow = ref(false);
-
       /**
        * 搜索项目
        */
@@ -327,7 +321,6 @@
         addProject,
         carousel,
         //删除
-        deleteShow,
         deleteProject,
       };
     },
@@ -365,6 +358,7 @@
         margin: 10px;
         position: relative;
         .delete {
+          opacity: 0;
           position: absolute;
           right: 0;
           top: 0;
@@ -437,5 +431,10 @@
   }
   .is-active {
     opacity: 1;
+  }
+  .card:hover {
+    .delete {
+      opacity: 1 !important;
+    }
   }
 </style>
