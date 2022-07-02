@@ -22,10 +22,7 @@
           :key="index"
         >
           <el-card :body-style="{ padding: '0px' }" class="card">
-            <img
-              src="https://fastly.jsdelivr.net/gh/kangcoll/tcPic@main/2022-6-2-16:56:27-12.png"
-              class="image"
-            />
+            <img src="../../public/img/bg/19.png" class="image" />
             <div style="padding: 14px; width: 100%">
               <el-button
                 type="danger"
@@ -116,7 +113,7 @@
           </el-card>
         </el-carousel-item>
       </el-carousel>
-      <div class="add">
+      <div class="add" :class="{ addActive: list.length == 0 }">
         <el-button type="primary" @click="addProject">添加项目</el-button>
       </div>
     </div>
@@ -410,13 +407,19 @@
         position: absolute;
         transform: translateX(-50%);
         left: 50%;
-        bottom: -100px;
+        bottom: -10%;
         .el-button {
           width: 200px;
           height: 50px;
           font-size: 18px;
           font-weight: 600;
         }
+      }
+      .addActive {
+        position: absolute;
+        transform: translateX(-50%);
+        left: 50%;
+        bottom: -100px;
       }
     }
   }
